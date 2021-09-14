@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Home</title>
+</head>
+<body>
+
+	<section>
+		<div class="container-fluid m-0 pr-0 pl-0 pt-1">
+			<div class="text-center mt-5">
+				<img alt="user image" th:src="@{|/img/profile/${contact.imageUrl}}" style="height: 225px; width: 225px; border-radius: 50%; object-fit: cover;">
+				<h2 class="text-capitalize" th:text="${contact.name}"></h2>
+			</div>
+			<div class="m-3 text-right">
+				<a th:href="@{|/user/editContact/${contact.cid}}" class="btn mr-2 mb-1 btn-primary">
+					<i class="fa fa-pencil"></i> Edit 
+				</a>
+				<button th:attr="onclick=|deleteContactById(${contact.cid},1)|" class="btn mr-2 mb-1 btn-danger">
+					<i class="fa fa-trash"></i> Delete
+				</button>
+			</div>
+			<div class="pl-5 pr-5 mb-4">
+				<div class="row bg-white">
+					<div class="col-6 font-weight-bold mt-2 mb-2">
+						Nick Name
+					</div>
+					<div class="col-6 mb-2 mt-2">
+						<span th:text="${contact.nickName}"></span>
+					</div>
+					<div class="col-6 font-weight-bold mb-2">
+						Phone No.
+					</div>
+					<div class="col-6 mb-2">
+						<span th:text="${contact.phone}"></span>
+					</div>
+					<div class="col-6 font-weight-bold mb-2">
+						Email
+					</div>
+					<div class="col-6 mb-2">
+						<span style="word-wrap: break-word" th:text="${contact.email}"></span>
+					</div>
+					<div class="col-6 font-weight-bold mb-2">
+						Occupation
+					</div>
+					<div class="col-6 mb-2">
+						<span th:text="${contact.occupation}"></span>
+					</div>
+					<div class="col-12 mt-2 mb-5">
+						<h5 class="text-center font-weight-bold">Description</h5>
+						<code style="text-align: justify; white-space: pre-line; display: inlne-block;" th:text="${contact.description}"></code>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" th:src="@{/js/deleteContactScript.js}" ></script>
+	</section>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Home</title>
+</head>
+<body>
+
+	<section>
+		<div class="container-fluid m-0 pr-0 pl-0 pt-1">
+			<div class="text-center mt-5">
+				<img alt="user image" th:src="@{|/img/user/${user.imageUrl}}" style="height: 225px; width: 225px; border-radius: 50%; object-fit: cover;">
+				<h2 class="text-capitalize" th:text="${user.name}"></h2>
+			</div>
+			<div class="pl-5 pr-5 mb-4">
+				<div class="row bg-white pt-3 pb-3">
+					<div class="col-6 font-weight-bold mt-2 mb-2">
+						Id
+					</div>
+					<div class="col-6 mb-2 mt-2">
+						<span th:text="${user.id}"></span>
+					</div>
+					<div class="col-6 font-weight-bold mt-2 mb-2">
+						Email
+					</div>
+					<div class="col-6 mb-2 mt-2">
+						<span style="word-wrap: break-word" th:text="${user.email}"></span>
+					</div>
+					<div class="col-6 font-weight-bold mt-2 mb-2">
+						Role
+					</div>
+					<div class="col-6 mb-2 mt-2">
+						<span th:text="${user.role}"></span>
+					</div>
+					<div class="col-6 font-weight-bold mt-2 mb-2">
+						Account Activation
+					</div>
+					<div class="col-6 mb-2 mt-2">
+						<span th:text="${user.enabled}?'Active':'Not Active'"></span>
+					</div>
+					<div class="col-6 font-weight-bold mt-2 mb-2">
+						About
+					</div>
+					<div class="col-6 mb-2 mt-2">
+						<span th:text="${user.about}"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			$("#profile-menu").addClass("bg-primary text-white");
+		</script>
+	</section>
+
+</body>
+</html>

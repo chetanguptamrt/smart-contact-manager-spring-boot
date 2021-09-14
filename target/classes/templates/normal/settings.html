@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Home</title>
+</head>
+<body>
+
+	<section>
+		<div class="container pt-5">
+			<div class="bg-white pt-2 pb-3">
+				<div class="text-center mb-2">
+					<h1>Change Password</h1>
+					<small style="display: none;" class="m-0 p-0" id="status"></small>
+				</div>
+				<form id="changePassword">
+					<div class="row mr-1 ml-1">
+						<div class="col-md-6 mb-2">
+							<input type="password" class="form-control" placeholder="Enter Old Password" name="oldPassword" required="required" />
+						</div>
+						<div class="col-md-6 mb-2 ">
+							<input type="password" class="form-control" placeholder="Enter New Password" name="newPassword" required="required" />
+						</div>
+					</div>
+					<div class="text-center mt-2">
+						<button class="btn btn-outline-success" type="submit">Change Password</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		
+		<div class="container pt-5">
+			<div class="bg-white pt-2 pb-3">
+				<div class="text-center mb-2">
+					<h1>Change Profile Photo</h1>
+					<small style="display: none;" class="m-0 p-0" id="pstatus"></small>
+				</div>
+				<form id="changePhoto">
+					<div class="row mr-1 ml-1">
+						<div class="col-12 mb-2 ">
+							<input type="file" accept="image/jpeg" name="photo" required="required" />
+						</div>
+					</div>
+					<div class="text-center mt-2">
+						<button class="btn btn-outline-success" type="submit">Update Photo</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		
+		<div class="container pt-5 mb-5">
+			<div class="bg-white pt-2 pb-3">
+				<div class="text-center mb-2">
+					<h1 class="text-danger">Danger Zone</h1>
+					<button onclick="deleteAccount()" class="btn btn-outline-danger">Delete Account</button>
+				</div>
+			</div>
+		</div>
+		
+		<script type="text/javascript" th:src="@{/js/changePasswordScript.js}" ></script>
+		<script>
+			$("#settings-menu").addClass("bg-primary text-white");
+		</script>
+	</section>
+
+</body>
+</html>

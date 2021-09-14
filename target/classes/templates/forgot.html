@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section},${title})">
+<head>
+	<meta charset="UTF-8" />
+	<title>Home</title>
+</head>
+<body>
+
+	<section>
+		
+    <div id="login">
+        <div class="container">
+            <div id="login-row" class="row justify-content-center align-items-center">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+	                    <h3 class="text-center text-info mt-3">Forgot Password</h3>
+                    	<div class="text-center">
+                    		<small id="status" style="display: none;"></small>
+                    	</div>
+                        <form id="forgotForm" class="form">
+                            <div class="form-group">
+                                <label for="username" class="text-info">Email:</label><br>
+                                <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email" required="required" />
+                            </div>
+                            <div class="form-group text-center">
+                                <input type="submit" id="send-otp-btn" class="btn btn-info btn-md" value="Send OTP">
+                            </div>
+                        </form>
+                    
+                    	<form id="otpConfirm" class="form">
+                    		<input type="email" name="oemail" id="oemail" hidden="" />
+                            <div class="form-group">
+                                <label for="username" class="text-info">OTP:</label><br>
+                                <input type="number" name="otp" id="otp" class="form-control" placeholder="Enter your OTP" required="required" />
+                            <div class="form-group">
+                                <label for="password" class="text-info">New Password:</label><br>
+                                <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password" required="required" />
+                            </div>
+                            </div>
+                            <div class="form-group text-center">
+                                <input type="submit" name="submit" class="btn btn-info btn-md" value="Save">
+                            </div>
+                        </form>
+	                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script th:src="@{/js/forgotPassword.js}"></script>
+	</section>
+
+</body>
+</html>
