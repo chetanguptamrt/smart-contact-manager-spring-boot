@@ -11,6 +11,7 @@
 * Back-end Language - Java
 * Framework - Spring Boot, Spring JPA, Spring Security, Bootstrap, jQuery
 * Template - Thymeleaf
+* IDE - STS
 * Database - MySQL
 * Server - localhost
 
